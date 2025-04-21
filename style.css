@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: wheat;
+}
+
+.header {
+    width: 250px;
+    max-width: 320px;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.main {
+    width: 250px;
+    max-width: 320px;
+    height: 100%;
+    /* background-color: purple; */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-1 {
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.weather {
+    padding: 3px;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+    background-color: rgb(150, 64, 64);
+}
+
+.temp {
+    font-size: 20px;
+    border:1px solid  gray;
+    
+}
+
+.condition {
+    font-size: 10px;
+    background-color: gray;
+}
+
+.location {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: gray;
+}
+
+.humidity {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: gray;
+}
+
+.date-time {
+    background-color: yellow;
+    font-size: 30px;
+    color: rgb(12, 248, 0);
+}
+
+.date-time span{
+    font-size: 50px;
+}
+
+.pomodoro {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: navy;
+}
+
+
+.section-2 {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(61, 81, 61); */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.to-do-list {
+    background-color: yellowgreen;
+}
+
+.journal {
+    background-color: aqua;
+}
+
+.footer {
+    width: 250px;
+    max-width: 320px;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    height: 100px;
+}

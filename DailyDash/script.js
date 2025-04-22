@@ -58,3 +58,68 @@ setInterval(() => {
 
 }, 1000);
 
+
+
+
+
+
+/*|| POMODORO TIMER CARD */
+
+
+const session = document.querySelector(".session")
+const longBreak = document.querySelector(".long-break")
+const shortBreak = document.querySelector(".short-break")
+const timer = document.querySelector(".timer")
+const startButton = document.querySelector(".start-button")
+const stopButton = document.querySelector(".stop-button")
+const endButton = document.querySelector(".end-button")
+
+let timeInSeconds;
+let selectedDuration = 25;
+let defaultDuration;
+let value;
+let intervalId;
+
+function setDuration(minutes) {
+    selectedDuration = minutes;
+    timeInSeconds = selectedDuration * 60;
+    defaultDuration = selectedDuration * 60;
+    timer.innerHTML= formatTime(selectedDuration*60);
+}
+
+function formatTime(interval) {
+    let min = String(Math.floor(interval / 60)).padStart(2, "0")
+    let secs = String(interval % 60).padStart(2, "0")
+    return `${min}:${secs}`
+}
+
+function startTimer() {
+   clearInterval(intervalId);
+    intervalId = setInterval(() => {
+        if(timeInSeconds<=0){
+           stopTimer();
+           console.log("stop")
+           return;
+        }
+        timeInSeconds--;
+        timer.innerHTML= formatTime(timeInSeconds);
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(intervalId);
+}
+
+function resetTimer() {
+    clearInterval(intervalId);
+    timeInSeconds = defaultDuration;
+    // console.log(formatTime(timeInSeconds))
+    timer.innerHTML=formatTime(timeInSeconds);
+}
+
+
+
+
+
+
+

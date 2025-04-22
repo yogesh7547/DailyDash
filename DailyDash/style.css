@@ -55,32 +55,32 @@ body {
 
 .temp {
     font-size: 20px;
-    border:1px solid  gray;
+    border:3px solid  gray;
     
 }
 
 .condition {
     font-size: 10px;
-    background-color: gray;
+    border:3px solid gray;
 }
 
 .location {
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: gray;
+    border:3px solid gray;
 }
 
 .humidity {
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: gray;
+    border:3px solid gray;
 }
 
 .date-time {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: yellow;
+    background-color: rgb(179, 0, 255);
     /* font-size: 30px; */
     color: rgb(12, 248, 0);
     padding: 3px;
@@ -89,7 +89,7 @@ body {
 .date{
     padding:0;
     width: 100%;
-    background-color: red;
+    border:3px solid red;
 }
 
 .date-time .year{
@@ -117,7 +117,84 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
     background-color: navy;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
 }
+
+.session{
+    background-color: gray;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.long-break{
+    background-color: gray;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.short-break{
+    background-color: gray;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.timer{
+    background-color: gray;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.start-button{
+    background-color: gray;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.stop-button{
+    background-color: gray;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.end-button{
+    background-color: gray;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .section-2 {

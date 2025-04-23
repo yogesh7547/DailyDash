@@ -200,9 +200,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: yellowgreen;
+    min-height: 300px;
 }
 
 .add_task{
+    max-height: 50px;
     width: 100%;
     height: 20%;
     display: flex;
@@ -224,8 +226,9 @@ body {
 
 .display_task{
     width: 100%;
-    height: 80%;
+    height: 90%;
     background-color: rgb(33, 28, 23);
+    overflow-y: scroll;
 }
 
 li{
@@ -263,12 +266,15 @@ li::before{
 
 .journal {
     background-color: aqua;
+    padding: 3px;
 }
 
 .journal textarea{
+    font-size: 20px;
     width: 100%;
     height: 100%;
     padding: 5px;
+    overflow-y: scroll;
 }
 
 .footer {

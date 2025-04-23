@@ -131,10 +131,11 @@ const listArea = document.querySelector(".display_task");
 function addTask() {
 
     if(inputBox.value===""){
-        alert("add tasks")
+        alert("add tasks");
+
     }
 
-    
+    else{
     let li = document.createElement("li");
     li.innerHTML = inputBox.value;
     listArea.appendChild(li);
@@ -152,17 +153,16 @@ function addTask() {
         li.classList.toggle("checked"); 
         saveData();
     })
-
-
+}
 
 inputBox.value="";
 saveData();
-
-    
+ 
 }
 
 function saveData(){
     localStorage.setItem("data",listArea.innerHTML);
+    localStorage.setItem("data",journal.innerHTML);
 }
 
 function showData(){
@@ -185,3 +185,7 @@ function showData(){
 }
 
 showData();
+
+
+/*|| JOURNAL CARD */
+

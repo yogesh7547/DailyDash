@@ -1,0 +1,52 @@
+Theme 1: Soft Sunrise (Minimal + Fresh)
+
+Element	Color
+Background	#F9FAFB (off-white)
+Accent (Primary)	#6366F1 (indigo-500 – energizing but soft)
+Secondary	#A5B4FC (light indigo – calm tone)
+Text (Main)	#111827 (almost black)
+Subtext	#6B7280 (cool gray)
+Mood Highlight	#FCD34D (soft yellow – sunshine energy)
+Card Background	#FFFFFF (white with soft shadows)
+Vibe: Clean, calm mornings. Feels like Notion meets a cozy to-do planner.
+
+
+
+Theme 2: Digital Zen (Dark Mode)
+
+Element	Color
+Background	#0F172A (dark slate)
+Card Background	#1E293B (elegant dark gray)
+Primary Accent	#38BDF8 (sky blue – cool, focused)
+Highlight	#FBBF24 (warm yellow – for mood/weather)
+Text (Main)	#F1F5F9 (soft white)
+Subtext	#94A3B8 (cool gray-blue)
+Vibe: Focused, distraction-free. Feels like coding + journaling in peace.
+
+
+
+
+
+
+💡 Example
+Let’s say your primary accent is #6366F1 (Indigo) and your highlight is #FCD34D (Sunshine Yellow):
+
+Your Add Task button → Indigo
+
+The user’s current mood icon → Yellow
+
+The active Pomodoro timer → Indigo
+
+A “You're on a streak!” badge → Yellow
+
+Your tab underline in nav → Indigo
+
+Daily motivational quote emphasis → Yellow
+
+Want me to plug those into a sample UI card or component to visualize?
+
+
+
+
+
+

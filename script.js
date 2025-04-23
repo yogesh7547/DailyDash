@@ -84,7 +84,7 @@ function setDuration(minutes) {
     selectedDuration = minutes;
     timeInSeconds = selectedDuration * 60;
     defaultDuration = selectedDuration * 60;
-    timer.innerHTML= formatTime(selectedDuration*60);
+    timer.innerHTML = formatTime(selectedDuration * 60);
 }
 
 function formatTime(interval) {
@@ -94,15 +94,15 @@ function formatTime(interval) {
 }
 
 function startTimer() {
-   clearInterval(intervalId);
+    clearInterval(intervalId);
     intervalId = setInterval(() => {
-        if(timeInSeconds<=0){
-           stopTimer();
-           console.log("stop")
-           return;
+        if (timeInSeconds <= 0) {
+            stopTimer();
+            console.log("stop")
+            return;
         }
         timeInSeconds--;
-        timer.innerHTML= formatTime(timeInSeconds);
+        timer.innerHTML = formatTime(timeInSeconds);
     }, 1000);
 }
 
@@ -114,11 +114,74 @@ function resetTimer() {
     clearInterval(intervalId);
     timeInSeconds = defaultDuration;
     // console.log(formatTime(timeInSeconds))
-    timer.innerHTML=formatTime(timeInSeconds);
+    timer.innerHTML = formatTime(timeInSeconds);
 }
 
 
 
 
+/*|| TO DO LIST CARD */
+
+const button = document.querySelector(".add_task button");
+const inputBox = document.querySelector(".add_task input");
+const listArea = document.querySelector(".display_task");
 
 
+
+function addTask() {
+
+    if(inputBox.value===""){
+        alert("add tasks")
+    }
+
+    
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listArea.appendChild(li);
+    let span = document.createElement("span");
+    span.innerHTML = "❌";
+    li.appendChild(span);  
+
+
+    span.addEventListener('click',()=>{
+        li.remove();
+        saveData();
+    })
+
+    li.addEventListener('click',()=>{
+        li.classList.toggle("checked"); 
+        saveData();
+    })
+
+
+
+inputBox.value="";
+saveData();
+
+    
+}
+
+function saveData(){
+    localStorage.setItem("data",listArea.innerHTML);
+}
+
+function showData(){
+    listArea.innerHTML=localStorage.getItem("data");
+
+    let allListItems = listArea.querySelectorAll("li");
+    allListItems.forEach((li) => {
+        let span = li.querySelector("span");
+
+        span.addEventListener("click", () => {
+            li.remove();
+            saveData();
+        });
+
+        li.addEventListener("click", () => {
+            li.classList.toggle("checked");
+            saveData();
+        });
+    });
+}
+
+showData();

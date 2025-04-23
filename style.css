@@ -207,7 +207,68 @@ body {
 }
 
 .to-do-list {
+    display: flex;
+    flex-direction: column;
     background-color: yellowgreen;
+}
+
+.add_task{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+
+.add_task input{
+    width: 80%;
+    height: 90%;
+
+}
+
+.add_task button{
+    width: 18%;
+    height: 90%;
+}
+
+.display_task{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(33, 28, 23);
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px  ;
+    user-select: none; /* The user-select CSS property controls whether the user can select text within an element */
+    cursor: pointer;
+    position:relative;
+}
+
+li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/028/556/520/original/circle-icon-on-a-white-background-free-vector.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left :8px;
+
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+.checked::before{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/010/152/436/non_2x/tick-check-mark-icon-sign-symbol-design-free-png.png);
 }
 
 .journal {

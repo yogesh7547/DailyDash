@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyDash</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -56,7 +60,17 @@
 
 
         <div class="section-2">
-            <div class="to-do-list"></div>
+            <div class="to-do-list">
+                <div class="add_task">
+                    <input type="text" placeholder="add your tasks here">
+                    <button onclick="addTask()">Add</button>
+                </div>
+                <div class="display_task">
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
             <div class="journal"></div>
         </div>
 

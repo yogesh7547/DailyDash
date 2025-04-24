@@ -5,92 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyDash</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="initial-snow">
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+		<div class="snow">&#10052;</div>
+	</div>
 
-
-    <div class="header">
-        <h1 class="main-heading">DailyDash</h1>
-        <h4 class="sub-heading">Your Personal Dashboard</h4>
-        <div class="quote">
-            <p>Lorem ipsum dolor sit amet.</p>
+        <div class="header">
+            <div class="title">
+                <h1 class="main-heading">DailyDash</h1>
+                <h4 class="sub-heading">Your Personal Dashboard</h4>
+            </div>
+            <div class="quote">
+                <p></p>
+                <h4></h4>
+            </div>
         </div>
-    </div>
 
 
 
-    <div class="main">
+        <div class="main">
 
-        <div class="section-1">
-            <div class="weather">
-                <div class="temp"> </div>
-                <div class="condition">
-                    <img src="" alt="">
-                    <h4></h4>
+            <div class="section-1">
+                <div class="weather">
+                    <div class="temp"> </div>
+                    <div class="condition">
+                        <img src="" alt="">
+                        <h4></h4>
+                    </div>
+                    <div class="location"></div>
+                    <div class="humidity"></div>
                 </div>
-                <div class="location"></div>
-                <div class="humidity"></div>
-            </div>
-            <div class="date-time">
-                <div class="date"></div>
-                <div class="time" >
-                    <span class="hrs">00</span>
-                    <span>:</span>
-                    <span class="min">00</span>
-                    <span>:</span>
-                    <span class="sec">00</span>
+                <div class="date-time">
+                    <div class="date"></div>
+                    <div class="time">
+                        <span class="hrs">00</span>
+                        <span>:</span>
+                        <span class="min">00</span>
+                        <span>:</span>
+                        <span class="sec">00</span>
+                    </div>
+                </div>
+                <div class="pomodoro">
+                    <div class="session" onclick="setDuration(25)">Session</div>
+                    <div class="long-break" onclick="setDuration(10)">long break</div>
+                    <div class="short-break" onclick="setDuration(1)">short break</div>
+                    <div class="timer"></div>
+                    <div class="start-button" onclick="startTimer()">start</div>
+                    <div class="stop-button" onclick="stopTimer()">stop</div>
+                    <div class="end-button" onclick="resetTimer()">end</div>
                 </div>
             </div>
-            <div class="pomodoro">
-                <div class="session" onclick="setDuration(25)">Session</div>
-                <div class="long-break" onclick="setDuration(10)">long break</div>
-                <div class="short-break" onclick="setDuration(1)">short break</div>
-                <div class="timer"></div>
-                <div class="start-button" onclick="startTimer()">start</div>
-                <div class="stop-button" onclick="stopTimer()">stop</div>
-                <div class="end-button" onclick="resetTimer()">end</div>
+
+
+            <div class="section-2">
+                <div class="to-do-list">
+                    <div class="add_task">
+                        <input type="text" placeholder="add your tasks here">
+                        <button onclick="addTask()">Add</button>
+                    </div>
+                    <div class="display_task">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="journal">
+                    <textarea type="text" name="journal" id="journal_area" placeholder="how was your day"></textarea>
+                </div>
             </div>
+
+
         </div>
 
 
-        <div class="section-2">
-            <div class="to-do-list">
-                <div class="add_task">
-                    <input type="text" placeholder="add your tasks here">
-                    <button onclick="addTask()">Add</button>
-                </div>
-                <div class="display_task">
-                    <ul>
-                        
-                    </ul>
-                </div>
-            </div>
-            <div class="journal">
-                <textarea type="text" name="journal" id="journal_area" placeholder="how was your day"></textarea>
-            </div>
-        </div>
-
-
-    </div>
-
-
-    <div class="footer">
+        <!-- <div class="footer">
       
-    </div>
+    </div> -->
 
 
 
 
-
-
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

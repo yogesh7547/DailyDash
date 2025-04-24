@@ -1,3 +1,34 @@
+/*|| RANDOM QUOTE GENERATOR CARD */
+
+let quote;
+let author;
+
+function getQuote(){
+    fetch("https://qapi.vercel.app/api/random")
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+   quote=data.quote;
+   author=data.author;
+   document.querySelector(".quote p").innerHTML=quote;
+   document.querySelector(".quote h4").innerHTML=`- ${author}`;
+})
+.catch((error)=>{
+    console.log(error);
+})
+}
+
+window.addEventListener('DOMContentLoaded',getQuote);
+
+
+
+
+
+
+
+
+
 
 /*|| WEATHER CARD */
 

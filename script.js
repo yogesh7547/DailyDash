@@ -135,6 +135,7 @@ function startTimer() {
         timeInSeconds--;
         timer.innerHTML = formatTime(timeInSeconds);
     }, 1000);
+    
 }
 
 function stopTimer() {
@@ -150,13 +151,11 @@ function resetTimer() {
 
 
 
-
 /*|| TO DO LIST CARD */
 
 const button = document.querySelector(".add_task button");
 const inputBox = document.querySelector(".add_task input");
 const listArea = document.querySelector(".display_task");
-
 
 
 function addTask() {
@@ -193,7 +192,6 @@ saveData();
 
 function saveData(){
     localStorage.setItem("data",listArea.innerHTML);
-    localStorage.setItem("data",journal.innerHTML);
 }
 
 function showData(){
@@ -220,3 +218,19 @@ showData();
 
 /*|| JOURNAL CARD */
 
+const journal=document.querySelector("#journal_area");
+
+function saveJournalData(){
+   localStorage.setItem("JournalData", journal.value)
+}
+
+function showJounrnalData(){
+    const saved = localStorage.getItem("JournalData");
+    if (saved) {
+        journal.value = saved;
+    }
+}
+
+showJounrnalData();
+
+journal.addEventListener('input', saveJournalData)

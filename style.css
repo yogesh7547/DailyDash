@@ -339,6 +339,11 @@ body {
     cursor: pointer;
 }
 
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .session{
     background-color: transparent;
     border: 3px solid #9CA3AF;

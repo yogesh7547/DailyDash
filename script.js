@@ -3,29 +3,23 @@
 let quote;
 let author;
 
-function getQuote(){
+function getQuote() {
     fetch("https://qapi.vercel.app/api/random")
-.then((response)=>{
-    return response.json();
-})
-.then((data)=>{
-   quote=data.quote;
-   author=data.author;
-   document.querySelector(".quote p").innerHTML=quote;
-   document.querySelector(".quote h4").innerHTML=`- ${author}`;
-})
-.catch((error)=>{
-    console.log(error);
-})
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            quote = data.quote;
+            author = data.author;
+            document.querySelector(".quote p").innerHTML = quote;
+            document.querySelector(".quote h4").innerHTML = `- ${author}`;
+        })
+        .catch((error) => {
+            console.log(error);
+        })
 }
 
-window.addEventListener('DOMContentLoaded',getQuote);
-
-
-
-
-
-
+window.addEventListener('DOMContentLoaded', getQuote);
 
 
 
@@ -111,11 +105,20 @@ let defaultDuration;
 let value;
 let intervalId;
 
+
+startButton.classList.add("disabled")
+stopButton.classList.add("disabled")
+endButton.classList.add("disabled")
+
 function setDuration(minutes) {
     selectedDuration = minutes;
     timeInSeconds = selectedDuration * 60;
     defaultDuration = selectedDuration * 60;
     timer.innerHTML = formatTime(selectedDuration * 60);
+
+    startButton.classList.remove("disabled")
+    stopButton.classList.remove("disabled")
+    endButton.classList.remove("disabled")
 }
 
 function formatTime(interval) {
@@ -126,6 +129,9 @@ function formatTime(interval) {
 
 function startTimer() {
     clearInterval(intervalId);
+    session.classList.add("disabled")
+    longBreak.classList.add("disabled")
+    shortBreak.classList.add("disabled")
     intervalId = setInterval(() => {
         if (timeInSeconds <= 0) {
             stopTimer();
@@ -135,7 +141,7 @@ function startTimer() {
         timeInSeconds--;
         timer.innerHTML = formatTime(timeInSeconds);
     }, 1000);
-    
+
 }
 
 function stopTimer() {
@@ -147,6 +153,9 @@ function resetTimer() {
     timeInSeconds = defaultDuration;
     // console.log(formatTime(timeInSeconds))
     timer.innerHTML = formatTime(timeInSeconds);
+    session.classList.remove("disabled")
+    longBreak.classList.remove("disabled")
+    shortBreak.classList.remove("disabled")
 }
 
 
@@ -160,42 +169,44 @@ const listArea = document.querySelector(".display_task");
 
 function addTask() {
 
-    if(inputBox.value===""){
+    if (inputBox.value === "") {
         alert("add tasks");
 
     }
 
-    else{
-    let li = document.createElement("li");
-    li.innerHTML = inputBox.value;
-    listArea.appendChild(li);
-    let span = document.createElement("span");
-    span.innerHTML = "❌";
-    li.appendChild(span);  
+    else {
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listArea.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "❌";
+        li.appendChild(span);
 
 
-    span.addEventListener('click',()=>{
-        li.remove();
-        saveData();
-    })
+        span.addEventListener('click', () => {
+            li.remove();
+            saveData();
+        })
 
-    li.addEventListener('click',()=>{
-        li.classList.toggle("checked"); 
-        saveData();
-    })
+        li.addEventListener('click', () => {
+            li.classList.toggle("checked");
+            saveData();
+        })
+    }
+
+    inputBox.value = "";
+    saveData();
+
 }
 
-inputBox.value="";
-saveData();
- 
+function saveData() {
+    localStorage.setItem("data", listArea.innerHTML);
 }
 
-function saveData(){
-    localStorage.setItem("data",listArea.innerHTML);
-}
 
-function showData(){
-    listArea.innerHTML=localStorage.getItem("data");
+function showData() {
+    listArea.innerHTML = localStorage.getItem("data");
+    // console.log(localStorage.getItem("data"));
 
     let allListItems = listArea.querySelectorAll("li");
     allListItems.forEach((li) => {
@@ -218,13 +229,13 @@ showData();
 
 /*|| JOURNAL CARD */
 
-const journal=document.querySelector("#journal_area");
+const journal = document.querySelector("#journal_area");
 
-function saveJournalData(){
-   localStorage.setItem("JournalData", journal.value)
+function saveJournalData() {
+    localStorage.setItem("JournalData", journal.value)
 }
 
-function showJounrnalData(){
+function showJounrnalData() {
     const saved = localStorage.getItem("JournalData");
     if (saved) {
         journal.value = saved;
